@@ -1,10 +1,10 @@
 function getComputerChoice() {
     let choice = "";
     let decider = Math.random();
-    if(decider < 0.33 ) {
+    if(decider <= 0.33 ) {
         choice = "rock";
     }
-    else if(decider > 0.33 & decider <0.66) {
+    else if(decider <= 0.66) {
         choice = "paper";
     }
     else {
@@ -27,11 +27,11 @@ function playRound(humanChoice, computerChoice) {
             console.log("Tie game. Nobody ever truly wins in life.");
         }
         else if (computerChoice === "paper") {
-            console.log(computerChoice + "beats" + humanChoice +"You lost. No do overs!");
+            console.log(computerChoice + " beats " + humanChoice +". You lost. No do overs!");
             computerScore +=1;
         }
         else {
-            console.log(humanChoice + "beats" + computerChoice + ". You won, For now.")
+            console.log(humanChoice + " beats " + computerChoice + ". You won, For now.")
             humanScore +=1;
         }
     }
@@ -40,34 +40,61 @@ function playRound(humanChoice, computerChoice) {
             console.log("Tie game. Nobody ever truly wins in life.");
         }
         else if (computerChoice === "scissors") {
-            console.log(computerChoice + "beats" + humanChoice +"You lost. No do overs!");
+            console.log(computerChoice + " beats " + humanChoice +". You lost. No do overs!");
             computerScore +=1;
         }
         else {
-            console.log(humanChoice + "beats" + computerChoice + ". You won, For now.")
+            console.log(humanChoice + " beats " + computerChoice + ". You won, For now.")
             humanScore +=1;
         }
     }
     else if (humanChoice.toLowerCase() === "scissors" ) {
-        if (computerChoice === "paper") {
+        if (computerChoice === "scissors") {
             console.log("Tie game. Nobody ever truly wins in life.");
         }
-        else if (computerChoice === "scissors") {
-            console.log(computerChoice + "beats" + humanChoice +"You lost. No do overs!");
+        else if (computerChoice === "papers") {
+            console.log(computerChoice + " beats " + humanChoice +". You lost. No do overs!");
             computerScore +=1;
         }
         else {
-            console.log(humanChoice + "beats" + computerChoice + ". You won, For now.")
+            console.log(humanChoice + " beats " + computerChoice + ". You won, For now.")
             humanScore +=1;
         }
     }
     else {
-        console.log("Please enter an actual choice.")
+        console.log("Please enter an actual choice.");
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+    
+
+    i = 0;
+    let totalHumanScore = 0;
+    let totalComputerScore = 0;
+    while(i < 5) {
+        humanScore = 0;
+        computerScore = 0;
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        totalHumanScore +=humanScore;
+        totalComputerScore += computerScore;
+        console.log("Score: Human - " + totalHumanScore + " Computer - " + totalComputerScore);
+        i++;
+    }
+    if(totalComputerScore > totalHumanScore) {
+        console.log("Sorry, you lost the game loser");
+    }
+    else if(totalComputerScore < totalHumanScore) {
+        console.log("You won! Guess you're not dumb afterall.");
+    }
+    else {
+        console.log("Nobody won. Try again?");
+    }
+}
+
+
+playGame();
