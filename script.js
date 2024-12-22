@@ -40,7 +40,7 @@ function playRound(humanChoice, computerChoice) {
             console.log("Tie game. Nobody ever truly wins in life.");
         }
         else if (computerChoice === "scissors") {
-            console.log(computerChoice + " beats " + humanChoice +". You lost. No do overs!");
+            console.log(computerChoice + " beats " + humanChoice +"You lost. No do overs!");
             computerScore +=1;
         }
         else {
@@ -49,10 +49,10 @@ function playRound(humanChoice, computerChoice) {
         }
     }
     else if (humanChoice.toLowerCase() === "scissors" ) {
-        if (computerChoice === "scissors") {
+        if (computerChoice === "paper") {
             console.log("Tie game. Nobody ever truly wins in life.");
         }
-        else if (computerChoice === "papers") {
+        else if (computerChoice === "scissors") {
             console.log(computerChoice + " beats " + humanChoice +". You lost. No do overs!");
             computerScore +=1;
         }
@@ -67,7 +67,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-
+/*
 function playGame() {
     
 
@@ -91,10 +91,8 @@ function playGame() {
     else if(totalComputerScore < totalHumanScore) {
         console.log("You won! Guess you're not dumb afterall.");
     }
-    else {
-        console.log("Nobody won. Try again?");
-    }
 }
 
 
 playGame();
+*/
