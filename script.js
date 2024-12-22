@@ -66,6 +66,25 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+///Code below would be for group of nodes, not sure how to implement this yet
+/*
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        alert(button.id);
+    });
+});
+*/
+
+const btn1 = document.querySelector("#btn1");
+const btn2 = document.querySelector("#btn2");
+const btn3 = document.querySelector("#btn3");
+btn1.addEventListener("click", () => playRound("rock", getComputerChoice()));
+btn1.addEventListener("click", () => playRound("paper", getComputerChoice()));
+btn1.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+
+
 
 /*
 function playGame() {
