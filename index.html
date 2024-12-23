@@ -5,15 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors
     </title>
+    <style>
+        div#content {
+            text-align: center;
+            margin-top: 5rem;
+            font-size: xx-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        div#container {
+            padding-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
-
+<div id="content">
     <div id="container">
+        <h1>Rock. Paper. Scissors.</h1>
         <button id="btn1">Rock</button>
         <button id="btn2">Paper</button>
         <button id="btn3">Scissors</button>
+        <button id="resetBtn">Restart</button>
     </div>
-    <script src="script.js"></script>
+    <div id="result"></div>
+    <div id="scores">
+        <p id="human-score">Human: 0</p>
+        <p id="computer-score">Computer: 0</p>
+    </div>
+</div>
 
+
+    <script src="script.js"></script>
 </body>
 </html>
